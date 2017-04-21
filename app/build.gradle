@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.compile_sdk
+    buildToolsVersion versions.build_tools
+
+    defaultConfig {
+        applicationId "com.manijshrestha.android.fotos"
+        minSdkVersion versions.compile_sdk
+        targetSdkVersion versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        debug.java.srcDirs += 'src/debug/kotlin'
+        release.java.srcDirs += 'src/release/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:$versions.support_lib"
+    compile "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin"
+    compile "io.reactivex.rxjava2:rxjava:2.0.9"
+    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+    compile "com.jakewharton.timber:timber:4.5.1"
+    compile "com.google.dagger:dagger:$versions.dagger"
+    kapt "com.google.dagger:dagger-compiler:$versions.dagger"
+    kapt "com.android.databinding:compiler:2.3.0"
+
+    testCompile 'junit:junit:4.12'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+}
