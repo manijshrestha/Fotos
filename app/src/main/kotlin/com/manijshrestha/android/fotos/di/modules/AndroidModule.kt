@@ -1,4 +1,4 @@
-package com.manijshrestha.android.fotos.di
+package com.manijshrestha.android.fotos.di.modules
 
 import android.app.Application
 import android.content.Context

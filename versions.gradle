@@ -6,5 +6,7 @@ ext.versions = [
         kotlin           : '1.1.1',
         support_lib      : '25.3.1',
         constraint_layout: '1.0.2',
-        dagger           : '2.10'
+        dagger           : '2.10',
+        okhttp3          : '3.7.0',
+        retrofit         : '2.2.0'
 ]
