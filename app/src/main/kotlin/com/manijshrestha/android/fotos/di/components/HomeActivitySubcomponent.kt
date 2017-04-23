@@ -1,6 +1,6 @@
 package com.manijshrestha.android.fotos.di.components
 
-import com.manijshrestha.android.fotos.ui.HomeActivity
+import com.manijshrestha.android.fotos.ui.home.HomeActivity
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
 
