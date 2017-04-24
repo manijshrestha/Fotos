@@ -1,4 +1,5 @@
-##Starter blueprint project
+## Starter blueprint project
+
 Boilerplate Android project showcasing Kotlin
 
 This project utilizes following:
